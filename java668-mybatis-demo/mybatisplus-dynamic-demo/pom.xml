@@ -3,48 +3,32 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.java668.mybatis</groupId>
-        <artifactId>java668-mybatis-demo</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.java668.mybatisplus</groupId>
-    <artifactId>mybatisplus-demo</artifactId>
+    <groupId>com.java668.mybatisplus.dynamic</groupId>
+    <artifactId>mybatisplus-dynamic-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mybatisplus-demo</name>
+    <name>mybatisplus-dynamic-demo</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>8</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--mybatis-plus-boot-starter-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.1</version>
-        </dependency>
-        <!--Mysql数据库驱动-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.20</version>
-        </dependency>
-        <!--集成druid连接池-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.23</version>
-        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
