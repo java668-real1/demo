@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
+
 /**
  * @author Jerry.chen
  * @desc
@@ -23,7 +25,9 @@ public class UserController {
     private final IUserService userService;
 
     @GetMapping("{id}")
-    public User get(@PathVariable("id") Long id) {
+    public User get(@PathVariable("id") Long id) throws SQLException {
+        userService.test();
         return userService.getById(id);
     }
+
 }
