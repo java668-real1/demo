@@ -12,5 +12,5 @@ import java.sql.SQLException;
  **/
 public interface IUserService extends IService<User> {
 
-    void test()  throws SQLException;
+    void test();
 }

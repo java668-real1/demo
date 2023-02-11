@@ -38,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public void test()  throws SQLException {
+    public void test()  {
         int count = 0;
         SqlSession sqlSession = null;
         try {
@@ -47,8 +47,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             PreparedStatement ps = conn.prepareStatement("select sleep(34)");
             ps.executeQuery();
         } catch (SQLException e) {
-            log.error("批量写入埋点数据异常：", e);
-            throw e;
+            log.error("SQLException：", e);
         } finally {
             if (null != sqlSession) {
                 closeNativeSqlSession(sqlSession);
