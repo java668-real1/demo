@@ -14,8 +14,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Result<T> implements Serializable {
 
-    private T datas;
-    private Integer resp_code;
+    private T data;
+    private Integer code;
     private String resp_msg;
 
     public static <T> Result<T> succeed(String msg) {
@@ -27,7 +27,7 @@ public class Result<T> implements Serializable {
     }
 
     public static <T> Result<T> succeed(T model) {
-        return of(model, CodeEnum.SUCCESS.getCode(), "");
+        return of(model, CodeEnum.SUCCESS.getCode(), "success");
     }
 
     public static <T> Result<T> of(T datas, Integer code, String msg) {

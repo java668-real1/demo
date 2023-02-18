@@ -1,13 +1,14 @@
 package com.java668.springboot.rest;
 
+import com.java668.springboot.model.PageResp;
+import com.java668.springboot.model.Result;
 import com.java668.springboot.po.User;
 import com.java668.springboot.service.IUserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @author Jerry.chen
@@ -23,7 +24,14 @@ public class UserController {
     private final IUserService userService;
 
     @GetMapping("{id}")
-    public User get(@PathVariable("id") Long id) {
-        return userService.getById(id);
+    public Result<User> get(@PathVariable("id") Long id) {
+        User user = userService.getById(id);
+        return Result.succeed(user);
     }
+
+    @GetMapping("/page")
+    public Result<PageResp<User>> page(@RequestParam Map<String, Object> params) {
+        return Result.succeed(userService.page(params));
+    }
+
 }

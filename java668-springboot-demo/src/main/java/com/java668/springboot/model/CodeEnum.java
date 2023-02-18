@@ -4,8 +4,8 @@ package com.java668.springboot.model;
  * @Author: zlt
  */
 public enum CodeEnum {
-    SUCCESS(0),
-    ERROR(1);
+    SUCCESS(200),
+    ERROR(500);
 
     private Integer code;
     CodeEnum(Integer code){
