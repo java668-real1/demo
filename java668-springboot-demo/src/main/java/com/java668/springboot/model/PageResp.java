@@ -22,7 +22,7 @@ public class PageResp<T> implements Serializable {
     /**
      * 总数
      */
-    private Long count;
+    private Long total;
 
     /**
      * 当前页结果集

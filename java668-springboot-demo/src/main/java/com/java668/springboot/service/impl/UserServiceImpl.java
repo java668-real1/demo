@@ -30,7 +30,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         page(page);
         return PageResp.<User>builder()
                 .list(page.getRecords())
-                .count(page.getTotal())
+                .total(page.getTotal())
                 .build();
     }
 
