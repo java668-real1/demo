@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: producer-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://console.nacos.io
+      config:
+        server-addr: http://console.nacos.io
+
+framework:
+  nacos:
+    watch:
+      threadNum: 10
