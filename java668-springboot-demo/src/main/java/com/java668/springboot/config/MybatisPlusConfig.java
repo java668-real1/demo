@@ -17,6 +17,10 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan(basePackages = {"com.java668.springboot.mapper"})
 public class MybatisPlusConfig {
 
+    /**
+     * 乐观锁插件
+     * @return
+     */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
@@ -33,6 +37,15 @@ public class MybatisPlusConfig {
         // 指定数据库方言为 MYSQL
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         return interceptor;
+    }
+
+    /**
+     * 批量插入
+     * @return
+     */
+    @Bean
+    public EasySqlInjector easySqlInjector() {
+        return new EasySqlInjector();
     }
 
 }
