@@ -66,4 +66,9 @@ public class UserController {
         return Result.succeed(userService.page(params));
     }
 
+
+    @GetMapping("/likes/{id}")
+    public Result<Boolean> likes(@PathVariable("id") Long id) {
+        return Result.succeed(userService.likes(id));
+    }
 }

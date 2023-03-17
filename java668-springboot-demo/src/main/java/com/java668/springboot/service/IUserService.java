@@ -19,4 +19,11 @@ public interface IUserService extends IService<User> {
      * @return
      */
     PageResp<User> page(Map<String, Object> params);
+
+    /**
+     * 点赞
+     * @param id
+     * @return
+     */
+    Boolean likes(Long id);
 }
