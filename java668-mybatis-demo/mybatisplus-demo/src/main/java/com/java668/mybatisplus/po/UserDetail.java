@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 @Data
-public class User {
+public class UserDetail {
 
     private Long id;
     private String name;
@@ -17,7 +17,4 @@ public class User {
      */
     @Version
     private Integer version;
-
-    @TableLogic
-    private Integer deleted;
 }
