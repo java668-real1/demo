@@ -9,3 +9,6 @@ spring:
         server-addr: http://127.0.0.1:8848
       config:
         server-addr: http://127.0.0.1:8848
+feign:
+  hystrix:
+    enabled: true
