@@ -63,4 +63,7 @@ spring:
         url-pattern: /*
         # 排除一些不必要的url
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+mybatis-plus:
+  configuration:
+    logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
 

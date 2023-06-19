@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 /**
  * @author Jerry.chen
  * @desc
@@ -21,9 +26,34 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private final IUserService userService;
+    private ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     @GetMapping("{id}")
     public User get(@PathVariable("id") Long id) {
         return userService.getById(id);
+    }
+
+
+
+    @GetMapping("/delete/{id}")
+    public boolean delete(@PathVariable("id") Long id) {
+        return userService.removeById(id);
+    }
+
+    @GetMapping("/delete1/{id}")
+    public boolean delete1(@PathVariable("id") Long id) {
+        return userService.removeById(id, true);
+    }
+
+    @GetMapping("/test/{id}")
+    public boolean test(@PathVariable("id") Long id) {
+        executorService.submit(() -> {
+            try {
+                userService.test(id);
+            } catch (Exception e) {
+                log.error("e", e);
+            }
+        });
+        return true;
     }
 }
