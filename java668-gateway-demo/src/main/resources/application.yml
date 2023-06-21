@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: elapse_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: elapse_route
+          uri: http://httpbin.org:80/get
+          filters:
+            - RequestTime=true
+          predicates:
+            - Path=/foo/**
+  profiles: elapse_route
+

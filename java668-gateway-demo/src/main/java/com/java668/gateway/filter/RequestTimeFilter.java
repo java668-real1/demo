@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 public class RequestTimeFilter implements GatewayFilter, Ordered {
 
-    private static final Log log = LogFactory.getLog(GatewayFilter.class);
+    private static final Log log = LogFactory.getLog(RequestTimeFilter.class);
     private static final String REQUEST_TIME_BEGIN = "requestTimeBegin";
 
     @Override
