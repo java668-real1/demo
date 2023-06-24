@@ -1,0 +1,61 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: oxadmin-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        - id: auth
+          uri: lb://oxadmin-oauth2-server
+          predicates:
+            - Path=/oauth/**
+          filters:
+            - PreserveHostHeader
+        - id: auth-login-page
+          uri: lb://oxadmin-oauth2-server
+          predicates:
+            - Path=/login
+          filters:
+            - PreserveHostHeader
+        - id: auth-login-process
+          uri: lb://oxadmin-oauth2-server
+          predicates:
+            - Path=/user/login
+          filters:
+            - PreserveHostHeader
+#        - id: auth-login-token
+#          uri: lb://oxadmin-oauth2-server
+#          predicates:
+#            - Path=/oauth/token
+#          filters:
+#            - PreserveHostHeader
+#        - id: auth-login-authorize
+#          uri: ://oxadmin-oauth2-server
+#          predicates:
+#            - Path=/oauth/authorize
+#          filters:
+#            - PreserveHostHeader
+#        - id: auth-check-process
+#          uri: lb://oxadmin-oauth2-server
+#          predicates:
+#            - Path=/oauth/check_token
+#          filters:
+#            - PreserveHostHeader
+        - id: oxadmin-oauth2-resource
+          uri: lb://oxadmin-oauth2-resource
+          predicates:
+            - Path=/user-api/**
+          filters:
+            - StripPrefix=1
+            - PreserveHostHeader
+
+

@@ -1,0 +1,10 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: oxadmin-oauth2-resource
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
