@@ -57,9 +57,9 @@ public class ResourceServerConfiguration {
         authorizeExchange
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
                 .pathMatchers(ignoreUrlsConfig.getUrls()).permitAll()//白名单配置
-//                .anyExchange()
-//
-//                    .access(authorizationManager)
+                .anyExchange()
+
+                    .access(authorizationManager)
                 .and()
                     .exceptionHandling()
                 .accessDeniedHandler(restfulAccessDeniedHandler)//处理未授权
