@@ -27,7 +27,7 @@ public class AuthController {
     @RequestMapping("/get_appid")
     public ResponseEntity<Map<String, Object>> getAppid() {
         Map<String, Object> result = new HashMap<>();
-        result.put("appid", "");
+        result.put("appid", "cli_a40069e79f7c900d");
         return ResponseEntity.ok(result);
     }
 
