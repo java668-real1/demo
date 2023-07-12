@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: ${java668.mysql.host}/test?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+    url: ${java668.mysql.host}/mybatis?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
     username: ${java668.mysql.username}
     password: ${java668.mysql.password}
     type: com.alibaba.druid.pool.DruidDataSource

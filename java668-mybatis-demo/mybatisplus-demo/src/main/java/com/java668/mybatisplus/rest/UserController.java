@@ -29,24 +29,24 @@ public class UserController {
     private ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     @GetMapping("{id}")
-    public User get(@PathVariable("id") Long id) {
+    public User get(@PathVariable("id") String id) {
         return userService.getById(id);
     }
 
 
 
     @GetMapping("/delete/{id}")
-    public boolean delete(@PathVariable("id") Long id) {
+    public boolean delete(@PathVariable("id") String id) {
         return userService.removeById(id);
     }
 
     @GetMapping("/delete1/{id}")
-    public boolean delete1(@PathVariable("id") Long id) {
+    public boolean delete1(@PathVariable("id") String id) {
         return userService.removeById(id, true);
     }
 
     @GetMapping("/test/{id}")
-    public boolean test(@PathVariable("id") Long id) {
+    public boolean test(@PathVariable("id") String id) {
         executorService.submit(() -> {
             try {
                 userService.test(id);

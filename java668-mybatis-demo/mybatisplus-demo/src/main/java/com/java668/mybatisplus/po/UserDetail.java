@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class UserDetail {
 
-    private Long id;
+    private String id;
     private String name;
     private Integer age;
     private String email;

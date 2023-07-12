@@ -23,7 +23,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean test(Long id) {
+    public boolean test(String id) {
         User user = new User();
         user.setId(id);
         user.setName("小青牛1");

@@ -10,5 +10,5 @@ import com.java668.mybatisplus.po.User;
  **/
 public interface IUserService extends IService<User> {
 
-    boolean test(Long id);
+    boolean test(String id);
 }
